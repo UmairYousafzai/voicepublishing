@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Voice Publishing</string>
+    <string name="share">Share</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="forgotten_password">Forgotten Password</string>
+    <string name="please_provide_your">Please provide your registered email address, and we will send you a link to reset your password.</string>
+    <string name="next">Next</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="name">Name</string>
+    <string name="to_continue_reading_please_subscribe">To continue reading, please subscribe</string>
+</resources>

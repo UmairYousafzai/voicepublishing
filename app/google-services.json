@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "322821780571",
+    "project_id": "voice-publishing",
+    "storage_bucket": "voice-publishing.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322821780571:android:39df113c417ce66109fb7e",
+        "android_client_info": {
+          "package_name": "com.shadow.voicepublishing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322821780571-9rban4ms03l928vdsum9gb1isvc4m0ie.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shadow.voicepublishing",
+            "certificate_hash": "cf6184cda1a8d0ac8ddc224007d72123a52827f9"
+          }
+        },
+        {
+          "client_id": "322821780571-jjv5un45hh018lutndb0amk6gkng59rm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAkjvvuNuLwku30J2MvPsDjSSkvtyxdaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322821780571-jjv5un45hh018lutndb0amk6gkng59rm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
