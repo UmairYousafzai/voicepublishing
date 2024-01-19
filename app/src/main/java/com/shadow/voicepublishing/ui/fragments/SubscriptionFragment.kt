@@ -41,7 +41,15 @@ class SubscriptionFragment : Fragment() {
 
     private fun btnListeners() {
 
-        binding.btnSubscribe.setOnClickListener {
+        binding.cardMonthly.setOnClickListener {
+            dataStoreViewModel.put(IS_SUBSCRIBE,true)
+            findNavController().navigate(SubscriptionFragmentDirections.actionSubscriptionFragmentToCategoryFragment())
+        }
+        binding.cardQuarter.setOnClickListener {
+            dataStoreViewModel.put(IS_SUBSCRIBE,true)
+            findNavController().navigate(SubscriptionFragmentDirections.actionSubscriptionFragmentToCategoryFragment())
+        }
+        binding.cardYear.setOnClickListener {
             dataStoreViewModel.put(IS_SUBSCRIBE,true)
             findNavController().navigate(SubscriptionFragmentDirections.actionSubscriptionFragmentToCategoryFragment())
         }

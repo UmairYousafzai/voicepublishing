@@ -107,5 +107,14 @@ dependencies {
 
     implementation ("com.dropbox.core:dropbox-core-sdk:4.0.0")
 
+//    implementation ("com.github.afreakyelf:Pdf-Viewer:2.0.5")
+//    implementation ("com.github.barteksc:android-pdf-viewer:3.1.0-beta.1")
+
+
+    implementation ("com.dmitryborodin:pdfview-android:1.1.0")
+
+
+
+
 
 }

@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.firebase.auth.FirebaseAuth
 import com.shadow.voicepublishing.models.netwrok.auth.User
 import com.shadow.voicepublishing.models.netwrok.news.NewsResponse
 import com.shadow.voicepublishing.network.ResultWrapper
@@ -28,6 +29,10 @@ class AuthViewModel @Inject constructor(private val authRepository: AuthReposito
     val signInResponse: LiveData<Boolean>
         get() = _signInResponse
     private val _signInResponse = MutableLiveData<Boolean>()
+
+    val resetPasswordResponse: LiveData<Boolean>
+        get() = _resetPasswordResponse
+    private val _resetPasswordResponse = MutableLiveData<Boolean>()
 
 
     fun signUp(user: User) {
@@ -54,9 +59,24 @@ class AuthViewModel @Inject constructor(private val authRepository: AuthReposito
         }
     }
 
+    fun resetPassword(email: String){
+        showProgressBar(true)
+        authRepository.resetPassword(email){
+            showProgressBar(false)
+            _resetPasswordResponse.value = it
+        }
+    }
+    fun signOut(){
+        FirebaseAuth.getInstance().signOut()
+    }
+
     fun setSignIn(flag:Boolean)
     {
         _signInResponse.value = flag
+    }
+    fun setResetPassword(flag:Boolean)
+    {
+        _resetPasswordResponse.value = flag
     }
 
     fun setSignUp(flag:Boolean)

@@ -7,6 +7,7 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.android.material.snackbar.Snackbar
+import com.shadow.voicepublishing.R
 
 fun ImageView.loadImage(url: String?) {
     val circularProgressDrawable = context?.let { CircularProgressDrawable(it) }
@@ -21,7 +22,7 @@ fun ImageView.loadImage(url: String?) {
                 .into(this)
         } else {
             Glide.with(it)
-                .load(android.R.drawable.picture_frame)
+                .load(R.drawable.voice_digital_logo)
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .into(this)
         }

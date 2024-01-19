@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/archivesFragment"
+        android:title="Archives"
+        android:icon="@drawable/ic_archives"
+        android:iconTint="@color/ligth_blue"
+        />
+<!--    <item android:id="@+id/item_login"-->
+<!--        android:title="Login"-->
+<!--        android:icon="@drawable/ic_login_button"-->
+<!--        android:iconTint="@color/ligth_blue"-->
+
+<!--        />-->
+
+</menu>

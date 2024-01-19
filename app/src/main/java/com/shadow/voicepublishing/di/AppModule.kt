@@ -1,12 +1,14 @@
 package com.shadow.voicepublishing.di
 
 
+import android.app.Application
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import com.shadow.voicepublishing.utils.CONSTANTS.BASE_URL
 import com.shadow.voicepublishing.utils.CONSTANTS.DATA_STORE_NAME
+import dagger.Component
 
 import dagger.Module
 import dagger.Provides
@@ -23,7 +25,10 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
-
+    @Provides
+    fun provideContext(application: Application): Context {
+        return application.applicationContext
+    }
 
     @Provides
     @Singleton

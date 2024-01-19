@@ -56,7 +56,7 @@ class NewsAdapter(
             holder.binding.ivThumbnail.loadImage(image)
         }else
         {
-            holder.binding.ivThumbnail.setImageDrawable(ContextCompat.getDrawable(holder.binding.root.context,R.drawable.baseline_photo_24))
+            holder.binding.ivThumbnail.setImageDrawable(ContextCompat.getDrawable(holder.binding.root.context,R.drawable.voice_digital_logo))
         }
 
         val paragraphs: Elements = document.select("p")
@@ -67,7 +67,9 @@ class NewsAdapter(
             holder.binding.tvDescription.text=""
         }
         holder.binding.parent.setOnClickListener {
-            listener.onNewsClicked(model,position)
+            if (isSubscribe) {
+                listener.onNewsClicked(model,position)
+            }
         }
 
         holder.binding.btnSubscribe.setOnClickListener {

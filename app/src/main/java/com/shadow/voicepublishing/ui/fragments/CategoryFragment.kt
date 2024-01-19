@@ -66,44 +66,14 @@ class CategoryFragment : Fragment(), NewsClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//
-//        setUpTabs()
-//
-//        setUpAdapter()
-//        listenViewModelData()
-//        getUserSubscriptionStatus()
 
-        lifecycleScope.launch(Dispatchers.IO) {
-            val config = DbxRequestConfig.newBuilder("Testing46").build()
-            val client = DbxClientV2(config, "sl.BteNXmPW-fNRLpq6FebMsCqYNbzA5oCy4yuNvw7FoBEZf1NuQjJ_UPqaYqIuRISqXSI5kum4np98YHOcqjnwxKMZOStBoB_ElBLW_led28y_JvJb7kq9_j53DqOl-X8bEys6OQwdQYpCeyTOAvFKnTc-")
-            val filePath = "/pdfs/123456.pdf"
+        setUpTabs()
 
-            val destinationPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-                .toString() + "123456.pdf"
-            try {
-                val outputStream = FileOutputStream(File(destinationPath))
-                client.files().download(filePath).download(outputStream)
-                outputStream.close()
+        setUpAdapter()
+        listenViewModelData()
+        getUserSubscriptionStatus()
 
-                // Open the downloaded PDF file using an Intent
-                val pdfFile = File(destinationPath)
-                val uri = FileProvider.getUriForFile(
-                    requireContext(),
-                    "${requireContext().packageName}.provider",
-                    pdfFile
-                )
 
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.setDataAndType(uri, "application/pdf")
-                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-                startActivity(intent)
-
-            } catch (e: DbxException) {
-                e.printStackTrace()
-            } catch (e: IOException) {
-                e.printStackTrace()
-            }
-        }
 
     }
 

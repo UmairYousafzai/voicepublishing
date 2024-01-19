@@ -1,5 +1,7 @@
 package com.shadow.voicepublishing.di
 
+import com.shadow.voicepublishing.repositories.archive.abstraction.ArchiveRepository
+import com.shadow.voicepublishing.repositories.archive.implementation.ArchiveRepoImpl
 import com.shadow.voicepublishing.repositories.auth.abstraction.AuthRepository
 import com.shadow.voicepublishing.repositories.auth.implementation.AuthRepoImpl
 import com.shadow.voicepublishing.repositories.data.abstraction.DataStoreRepository
@@ -15,6 +17,8 @@ interface RepositoryModule {
 
     @Binds
     fun bindAuthRepository(impl: AuthRepoImpl): AuthRepository
+    @Binds
+    fun bindArchiveRepository(impl: ArchiveRepoImpl): ArchiveRepository
 
     @Binds
     fun bindDataStoreRepository(impl: DataStoreRepoImpl): DataStoreRepository

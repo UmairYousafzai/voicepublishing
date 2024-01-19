@@ -11,6 +11,7 @@ import com.shadow.voicepublishing.models.netwrok.auth.User
 import com.shadow.voicepublishing.repositories.auth.abstraction.AuthRepository
 import com.shadow.voicepublishing.repositories.data.abstraction.DataStoreRepository
 import com.shadow.voicepublishing.utils.CONSTANTS.USERS
+import com.shadow.voicepublishing.utils.IS_LOGIN
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -91,6 +92,7 @@ class AuthRepoImpl @Inject constructor(private val dataStore: DataStoreRepositor
     private fun saveUserToDataStore(it: User) {
         CoroutineScope(Dispatchers.IO).launch{
             dataStore.saveUserInfo(it)
+            dataStore.putBoolean(IS_LOGIN,true)
         }
     }
 
@@ -133,6 +135,16 @@ class AuthRepoImpl @Inject constructor(private val dataStore: DataStoreRepositor
                     }
                 }
             }
+    }
+
+    override fun resetPassword(email: String, onSuccess: (Boolean) -> Unit) {
+        auth.sendPasswordResetEmail(email).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                onSuccess.invoke(true)
+            } else {
+                onSuccess.invoke(false)
+            }
+        }
     }
 
 }

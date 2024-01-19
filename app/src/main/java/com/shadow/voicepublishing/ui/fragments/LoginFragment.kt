@@ -42,28 +42,28 @@ class LoginFragment : Fragment() {
 
     }
 
-    private fun viewModelListeners() {
+        private fun viewModelListeners() {
 
-        with(viewModel) {
+            with(viewModel) {
 
-            progressBar.observe(viewLifecycleOwner) {
-                if (it) loaderDialog.show()
-                else loaderDialog.dismiss()
-            }
-
-            snakBarMessage.observe(viewLifecycleOwner) {
-                showSnackBar(it)
-            }
-
-            signInResponse.observe(viewLifecycleOwner) {
-                if (it) {
-                    findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToSubscriptionFragment())
-                    setSignIn(false)
+                progressBar.observe(viewLifecycleOwner) {
+                    if (it) loaderDialog.show()
+                    else loaderDialog.dismiss()
                 }
-            }
 
+                snakBarMessage.observe(viewLifecycleOwner) {
+                    showSnackBar(it)
+                }
+
+                signInResponse.observe(viewLifecycleOwner) {
+                    if (it) {
+                        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToSubscriptionFragment())
+                        setSignIn(false)
+                    }
+                }
+
+            }
         }
-    }
 
     private fun btnListeners() {
 

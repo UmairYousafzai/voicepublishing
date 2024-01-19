@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/categoryFragment"
         android:name="com.shadow.voicepublishing.ui.fragments.CategoryFragment"
-        android:label="fragment_catergory"
+        android:label=""
         tools:layout="@layout/fragment_catergory">
         <action
             android:id="@+id/categoryFragment_to_newsPreviewFragment"
@@ -121,5 +121,28 @@
             app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/categoryFragment"
             app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/archivesFragment"
+        android:name="com.shadow.voicepublishing.ui.fragments.ArchivesFragment"
+        android:label="ArchivesFragment"
+        tools:layout="@layout/fragment_archives">
+        <action
+            android:id="@+id/action_archivesFragment_to_PDFViewerFragment"
+            app:destination="@id/PDFViewerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/PDFViewerFragment"
+        android:name="com.shadow.voicepublishing.ui.fragments.PDFViewerFragment"
+        android:label="PDFViewerFragment"
+        tools:layout="@layout/fragment_pdf_viewer"
+        >
+        <argument
+            android:name="pdf"
+            app:argType="com.shadow.voicepublishing.models.netwrok.news.PDFNews" />
     </fragment>
 </navigation>

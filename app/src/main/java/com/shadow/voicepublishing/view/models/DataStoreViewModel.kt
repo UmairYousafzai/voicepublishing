@@ -6,6 +6,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.shadow.voicepublishing.models.netwrok.auth.User
 import com.shadow.voicepublishing.repositories.data.abstraction.DataStoreRepository
 import com.shadow.voicepublishing.utils.IS_LOGIN
+import com.shadow.voicepublishing.utils.IS_SUBSCRIBE
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -49,6 +50,7 @@ class DataStoreViewModel @Inject constructor(private val repository: DataStoreRe
     fun clearData() = viewModelScope.launch {
         repository.clearData()
         put(IS_LOGIN, false)
+        put(IS_SUBSCRIBE, false)
         FirebaseAuth.getInstance().signOut()
     }
 

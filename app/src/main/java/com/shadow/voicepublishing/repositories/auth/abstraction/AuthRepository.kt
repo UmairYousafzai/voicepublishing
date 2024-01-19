@@ -9,5 +9,5 @@ interface AuthRepository {
     fun signUp(user: User,onSuccess:(Boolean,String)->Unit)
 
     fun signIn(email: String, password:String,onSuccess: (Boolean, String) -> Unit)
-
+    fun resetPassword(email: String, onSuccess: (Boolean) -> Unit)
 }

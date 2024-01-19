@@ -134,6 +134,8 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:cornerRadius="10dp"
+            android:textColor="@color/white"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btn_login"
             app:layout_constraintStart_toStartOf="@id/card_view"
@@ -150,6 +152,7 @@
             android:textStyle="bold"
             android:paddingHorizontal="20dp"
             app:cornerRadius="10dp"
+            android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="@id/btn_forgot_password"
             app:layout_constraintEnd_toEndOf="@id/card_view"
             app:layout_constraintStart_toEndOf="@id/btn_forgot_password"
