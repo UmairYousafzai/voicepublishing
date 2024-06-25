@@ -3,7 +3,7 @@ package com.shadow.voicepublishing.utils
 object CONSTANTS {
 
     /************************ END POINTS ********************/
-    const val BASE_URL="https://thevoiceslu.com/wp-json/wp/v2/"
+    const val BASE_URL=""
     const val POSTS="posts"
 
     /************************* General *********************/
