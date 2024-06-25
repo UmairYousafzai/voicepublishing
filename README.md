@@ -24,7 +24,7 @@ Voice Publishing is a versatile Android application designed to provide users wi
 
 ### Technologies Used
 
-**Programming Language: Java**
+**Programming Language: Kotlin**
 
 **Frameworks & Libraries:**
 
